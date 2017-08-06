@@ -32,4 +32,9 @@ public class CityService {
 		LOG.info("In getCityById of CityService");
 		return cityRepo.findOne(cityId);
 	}
+	
+	public City getCityByName(String cityName){
+		LOG.info("In getCityByName of CityService");
+		return cityRepo.findByName(cityName);
+	}
 }

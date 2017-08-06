@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.javafasci.jpa.jpademo.model.City;
@@ -44,6 +43,14 @@ public class CityController {
 		LOG.info("In getCityById of Controller");
 		LOG.info("Requested city Id : " + cityId);
 		return cityService.getCityById(cityId);
+	}
+	
+	@RequestMapping(value="/getCityByName/{name}",method = RequestMethod.GET)
+	@ResponseBody
+	public City getCityByName(@PathVariable("name") String cityName) {
+		LOG.info("In getCityByName of Controller");
+		LOG.info("Requested city Name : " + cityName);
+		return cityService.getCityByName(cityName);
 	}
 	
 }
