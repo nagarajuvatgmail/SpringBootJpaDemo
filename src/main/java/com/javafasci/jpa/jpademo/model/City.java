@@ -1,5 +1,6 @@
 package com.javafasci.jpa.jpademo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,9 +12,16 @@ public class City {
 	@Id
 	private int id;
 	
+	@Column(name="Name")
 	private String name;
+	
+	@Column(name="CountryCode")
 	private String countryCode;
+	
+	@Column(name="District")
 	private String district;
+	
+	@Column(name="Population")
 	private String population;
 	
 	public City(){}
@@ -42,7 +50,8 @@ public class City {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	
 	public String getCountryCode() {
 		return countryCode;
 	}
